@@ -140,7 +140,7 @@ def process_data(data):
 
 pipeline = (
     task(get_data, branch=True, workers=20)
-    | task(workers=10, multiprocess=True)
+    | task(process_data, workers=10, multiprocess=True)
 )
 ```
 
